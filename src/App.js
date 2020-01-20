@@ -11,8 +11,7 @@ class App extends React.Component {
   }
 
   fetchArticles = (country, category, query) => {
-    console.log(query)
-    fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&query=${query}&apiKey=852bb6631efc4b758d33ffc798f7c072`)
+    fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&q=${query}&apiKey=852bb6631efc4b758d33ffc798f7c072`)
     .then(res => res.json())
     .then(data => {
         this.setState({
@@ -47,7 +46,7 @@ class App extends React.Component {
         <form onSubmit={this.handleSubmit}>
 
           <label>Country:
-            <select onChange={event => this.handleChange(event)} name="country">
+            <select onChange={event => this.handleChange(event)} value={this.state.country} name="country">
               <option value="us">United States</option>
               <option value="gb">United Kingdom</option>
               <option value="ca">Canada</option>
@@ -56,7 +55,7 @@ class App extends React.Component {
           </label>
 
           <label>Category:
-            <select onChange={event => this.handleChange(event)} name="category">
+            <select onChange={event => this.handleChange(event)} value={this.state.category} name="category">
               <option value="business">Business</option>
               <option value="entertainment">Entertainment</option>
               <option value="general">General</option>
