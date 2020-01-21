@@ -21,6 +21,7 @@ class Preferences extends React.Component {
 
                 <label>Category:
                     <select onChange={event => this.props.handleChange(event)} value={this.props.category} name="category">
+                    <option value=""></option>
                     <option value="business">Business</option>
                     <option value="entertainment">Entertainment</option>
                     <option value="general">General</option>
