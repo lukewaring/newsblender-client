@@ -22,7 +22,7 @@ class Favorite extends React.Component {
     render() {
         return (
             this.state.viewDetails ? <ArticlePreview article={this.props.article} handleClick={this.handleClick} addFavorite={this.props.addFavorite} /> : (
-                <Card style={{ width: '18rem' }}>
+                <Card border="dark" style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={this.props.article.image_url} alt="cover photo" />
                 <Card.Body>
                     <Card.Title>{this.props.article.title}</Card.Title>

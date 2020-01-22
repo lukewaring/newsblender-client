@@ -8,6 +8,7 @@ class FavoritesContainer extends React.Component {
             <div>
                 <h5>Favorites:</h5>
                 {this.props.favorites.map((a, ind) => <Favorite article={a} key={ind} addFavorite={this.props.addFavorite} removeFavorite={this.props.removeFavorite} />)}
+                <br></br>
                 <h5>All articles:</h5>
             </div>
         )

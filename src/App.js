@@ -22,7 +22,7 @@ class App extends React.Component {
         })
     })
   }
-  
+   
   // componentDidMount() {
   //   this.fetchArticles(this.state.country, this.state.category, this.state.query)
   // }
@@ -92,6 +92,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Newsblender</h1>
+        <br></br>
         <Preferences country={this.state.country} category={this.state.category} query={this.state.query} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
         <FavoritesBar removeFavorite={this.removeFavorite} favorites={this.state.favorites} />
         <ArticlesContainer addFavorite={this.addFavorite} articles={this.state.articles} country={this.state.country} category={this.state.category} query={this.state.query}  />

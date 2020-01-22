@@ -6,7 +6,7 @@ class Preferences extends React.Component {
         return (
             <div>
 
-                <h3>Select news preferences:</h3>
+                <h4>Select news preferences:</h4>
 
                 <form onSubmit={event => this.props.handleSubmit(event)}>
 
@@ -39,6 +39,8 @@ class Preferences extends React.Component {
                 <input type="submit" value="Submit" />
 
                 </form>
+
+                <br></br>
 
             </div>
         )

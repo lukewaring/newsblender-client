@@ -16,7 +16,10 @@ class FavoritesBar extends React.Component {
 
     render() {
         return (
-            this.state.viewFavorites ? <FavoritesContainer removeFavorite={this.props.removeFavorite} favorites={this.props.favorites}/> : <Button onClick={this.handleClick} variant="primary">View favorites</Button>
+            <div>
+                <div>{this.state.viewFavorites ? <FavoritesContainer removeFavorite={this.props.removeFavorite} favorites={this.props.favorites}/> : <Button onClick={this.handleClick} variant="primary">View favorites</Button>}</div>
+                <br></br>
+            </div>
         )
     }
 
