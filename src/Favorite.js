@@ -1,6 +1,6 @@
 import React from 'react'
 import {Button, Card} from 'react-bootstrap'
-import ArticlePreview from './ArticlePreview'
+import FavoritePreview from './FavoritePreview'
 
 class Favorite extends React.Component {
 
@@ -21,12 +21,12 @@ class Favorite extends React.Component {
 
     render() {
         return (
-            this.state.viewDetails ? <ArticlePreview article={this.props.article} handleClick={this.handleClick} addFavorite={this.props.addFavorite} /> : (
+            this.state.viewDetails ? <FavoritePreview article={this.props.article} handleClick={this.handleClick} addFavorite={this.props.addFavorite} /> : (
                 <Card border="dark" style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={this.props.article.image_url} alt="cover photo" />
                 <Card.Body>
                     <Card.Title>{this.props.article.title}</Card.Title>
-                    <Button onClick={this.handleClick} variant="primary">View preview</Button>
+                    <Button onClick={this.handleClick} variant="primary">Preview</Button>
                     <Button onClick={id => this.handleDelete(this.props.article.id)} variant="danger">Delete</Button>
                 </Card.Body>
                 </Card>

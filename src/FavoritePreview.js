@@ -1,8 +1,8 @@
 import React from 'react'
 import {Button, Card} from 'react-bootstrap'
-import Article from './Article'
+import Favorite from './Favorite'
 
-class ArticlePreview extends React.Component {
+class FavoritePreview extends React.Component {
 
     state = {
         favoriteClicked: false
@@ -17,12 +17,11 @@ class ArticlePreview extends React.Component {
 
     render() {
         return (
-            this.state.favoriteClicked ? <Article article={this.props.article} /> : (
+            this.state.favoriteClicked ? <Favorite article={this.props.article} /> : (
             <Card style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Text>{this.props.article.description}</Card.Text>
                 <Button href={this.props.article.url} target="_blank" variant="info">Continue reading</Button>
-                <Button onClick={props => this.handleFavoriteClick(this.props.article)} variant="success">Add to favorites</Button>
                 <Button onClick={this.props.handleClick} variant="secondary">Go back</Button>
             </Card.Body>
             </Card>
@@ -32,4 +31,4 @@ class ArticlePreview extends React.Component {
 
 }
 
-export default ArticlePreview
+export default FavoritePreview

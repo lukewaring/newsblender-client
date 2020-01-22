@@ -22,7 +22,7 @@ class Article extends React.Component {
                     <Card.Img variant="top" src={this.props.article.urlToImage} alt="cover photo" />
                     <Card.Body>
                         <Card.Title>{this.props.article.title}</Card.Title>
-                        <Button onClick={this.handleClick} variant="primary">View preview</Button>
+                        <Button onClick={this.handleClick} variant="primary">Preview</Button>
                     </Card.Body>
                 </Card>
                 
