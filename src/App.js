@@ -13,20 +13,6 @@ class App extends React.Component {
     query: ''
   }
 
-  fetchArticles = (country, category, query) => {
-    fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&q=${query}&apiKey=852bb6631efc4b758d33ffc798f7c072`)
-    .then(res => res.json())
-    .then(data => {
-        this.setState({
-            articles: data.articles
-        })
-    })
-  }
-   
-  // componentDidMount() {
-  //   this.fetchArticles(this.state.country, this.state.category, this.state.query)
-  // }
-
   componentDidMount() {
     fetch('http://localhost:3001/articles')
     .then(res => res.json())
@@ -41,6 +27,16 @@ class App extends React.Component {
     .then(data => {
         this.setState({
             favorites: data
+        })
+    })
+  }
+
+  fetchArticles = (country, category, query) => {
+    fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&q=${query}&apiKey=852bb6631efc4b758d33ffc798f7c072`)
+    .then(res => res.json())
+    .then(data => {
+        this.setState({
+            articles: data.articles
         })
     })
   }
@@ -90,7 +86,7 @@ class App extends React.Component {
   render() {
     console.log('logging app.js state', this.state)
     return (
-      <div>
+      <div style={{textAlign: "center"}}>
         <h1>Newsblender</h1>
         <br></br>
         <Preferences country={this.state.country} category={this.state.category} query={this.state.query} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
